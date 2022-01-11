@@ -1,0 +1,24 @@
+/* div {
+  display: block;
+} */
+
+.list {
+  padding: 1rem;
+  list-style-type: none;
+}
+
+.list li {
+  font-weight: bold;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.list li:last-of-type {
+  margin-bottom: 0;
+}
+
+.empty {
+  display: none;
+}
