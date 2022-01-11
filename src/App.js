@@ -5,10 +5,14 @@ import UsersInfo from "./components/UsersInfo";
 
 function App() {
   const [userData, setUserData] = useState([]);
+  const [invalidValue, setInvalidValue] = useState(false);
+
+  console.log(userData);
 
   return (
     <div className={styles.wrapper}>
-      <Form setUsers={setUserData} />
+      {invalidValue && <div className={styles.backdrop}></div>}
+      <Form setUsers={setUserData} setInvalidValue={setInvalidValue} />
       <UsersInfo userData={userData} />
     </div>
   );

@@ -5,13 +5,12 @@ import { useState } from "react";
 
 const Form = props => {
   const [enteredName, setEnteredName] = useState("");
-  const [enteredAge, setEnteredAge] = useState();
+  const [enteredAge, setEnteredAge] = useState("");
 
   const formSubmitHandler = Event => {
     Event.preventDefault();
 
     if (enteredName.trim().length > 0 && enteredAge > 0) {
-      console.log(enteredAge, enteredName);
       props.setUsers(prev =>
         prev.concat({
           userName: enteredName,
@@ -19,7 +18,12 @@ const Form = props => {
           id: Math.random(),
         })
       );
+    } else {
+      props.setInvalidValue(true);
     }
+
+    setEnteredName("");
+    setEnteredAge("");
   };
 
   const userNameHandler = Event => {
@@ -31,21 +35,33 @@ const Form = props => {
   };
 
   return (
-    <Card>
-      <form onSubmit={formSubmitHandler}>
-        <div className={styles["form-control-group"]}>
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" onChange={userNameHandler} />
-        </div>
+    <div className={styles["form-wrapper"]}>
+      <Card>
+        <form onSubmit={formSubmitHandler}>
+          <div className={styles["form-control-group"]}>
+            <label htmlFor="username">Username</label>
+            <input
+              value={enteredName}
+              type="text"
+              id="username"
+              onChange={userNameHandler}
+            />
+          </div>
 
-        <div className={styles["form-control-group"]}>
-          <label htmlFor="age">Age(Years)</label>
-          <input type="number" id="age" onChange={ageHandler} />
-        </div>
+          <div className={styles["form-control-group"]}>
+            <label htmlFor="age">Age(Years)</label>
+            <input
+              value={enteredAge}
+              type="number"
+              id="age"
+              onChange={ageHandler}
+            />
+          </div>
 
-        <Button>Add User</Button>
-      </form>
-    </Card>
+          <Button>Add User</Button>
+        </form>
+      </Card>
+    </div>
   );
 };
 
