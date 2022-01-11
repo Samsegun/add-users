@@ -1,0 +1,23 @@
+form {
+  padding: 1rem;
+}
+
+.form-control-group {
+  font-weight: bold;
+  margin: 0.9rem 0;
+}
+
+label,
+input {
+  display: block;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  padding: 0.3rem;
+}
