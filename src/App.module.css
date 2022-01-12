@@ -3,7 +3,6 @@
   background: rgb(61, 61, 61);
   min-height: 100vh;
   margin: 0;
-  /* padding: 2rem 0; */
 }
 
 .backdrop {
@@ -12,4 +11,31 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.549);
   z-index: 1;
+}
+
+.backdrop .modal {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  margin: 0;
+  z-index: 2;
+}
+
+.modal h3 {
+  background: #8b005d;
+  color: white;
+  margin: 0;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-wrapper {
+  padding: 1rem;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
 }
