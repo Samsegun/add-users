@@ -18,6 +18,8 @@ const Form = props => {
           id: Math.random(),
         })
       );
+    } else if (parseInt(Event.target.value) < 0) {
+      props.setInvalidAge(true);
     } else {
       props.setInvalidValue(true);
     }

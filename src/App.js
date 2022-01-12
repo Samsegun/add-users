@@ -8,8 +8,7 @@ import Button from "./components/UI/Button";
 function App() {
   const [userData, setUserData] = useState([]);
   const [invalidValue, setInvalidValue] = useState(false);
-
-  console.log(userData);
+  const [invalidAge, setInvalidAge] = useState(false);
 
   const clickHandler = Event => {
     // console.dir(Event.target);
@@ -24,13 +23,21 @@ function App() {
           <Card className={styles.modal}>
             <h3>Invalid input</h3>
             <div className={styles["modal-wrapper"]}>
-              <p>Please enter a valid name and age (non-empty values).</p>
+              <p>
+                {invalidAge
+                  ? "Please enter a valid age (>0)."
+                  : "Please enter a valid name and age (non-empty values)."}
+              </p>
               <Button className={styles.button}>Okay</Button>
             </div>
           </Card>
         </div>
       )}
-      <Form setUsers={setUserData} setInvalidValue={setInvalidValue} />
+      <Form
+        setUsers={setUserData}
+        setInvalidValue={setInvalidValue}
+        setInvalidAge={setInvalidAge}
+      />
       <UsersInfo userData={userData} />
     </div>
   );

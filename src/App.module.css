@@ -15,11 +15,10 @@
 
 .backdrop .modal {
   position: absolute;
-  top: 28%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, 50%);
   margin: 0;
-  z-index: 2;
 }
 
 .modal h3 {
