@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Form from "./components/Form";
 import UsersInfo from "./components/UsersInfo";
 import Card from "./components/UI/Card";
+import ErrorMessage from "./components/ErrorMessage";
 import Button from "./components/UI/Button";
 
 function App() {
@@ -10,8 +11,7 @@ function App() {
   const [invalidValue, setInvalidValue] = useState(false);
   const [invalidAge, setInvalidAge] = useState(false);
 
-  const clickHandler = Event => {
-    // console.dir(Event.target);
+  const clickHandler = () => {
     console.log("fg");
     setInvalidValue(false);
   };
@@ -23,11 +23,8 @@ function App() {
           <Card className={styles.modal}>
             <h3>Invalid input</h3>
             <div className={styles["modal-wrapper"]}>
-              <p>
-                {invalidAge
-                  ? "Please enter a valid age (>0)."
-                  : "Please enter a valid name and age (non-empty values)."}
-              </p>
+              <ErrorMessage invalidAge={invalidAge} />
+
               <Button className={styles.button}>Okay</Button>
             </div>
           </Card>
