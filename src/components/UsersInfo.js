@@ -3,13 +3,6 @@ import Card from "./UI/Card";
 import styles from "./UsersInfo.module.css";
 
 const UsersInfo = ({ userData }) => {
-  //   const [isEmpty, setIsEmpty] = useState(false);
-
-  //   if (userData.length > 0) {
-  //     setIsEmpty(true);
-  //   }
-  console.log(userData);
-
   return (
     <Card>
       <div className={`${!userData.length && styles.empty}`}>

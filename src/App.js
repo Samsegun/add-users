@@ -12,7 +12,6 @@ function App() {
   const [invalidAge, setInvalidAge] = useState(false);
 
   const clickHandler = () => {
-    console.log("fg");
     setInvalidValue(false);
   };
 
