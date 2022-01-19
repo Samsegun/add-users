@@ -23,7 +23,6 @@ function App() {
             <h3>Invalid input</h3>
             <div className={styles["modal-wrapper"]}>
               <ErrorMessage invalidAge={invalidAge} />
-
               <Button className={styles.button}>Okay</Button>
             </div>
           </Card>

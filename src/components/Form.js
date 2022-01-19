@@ -35,7 +35,7 @@ const Form = props => {
   };
 
   const ageHandler = Event => {
-    setEnteredAge(parseInt(Event.target.value));
+    setEnteredAge(+Event.target.value);
   };
 
   return (
